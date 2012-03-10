@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>lol</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="controls">
+      <input id="filter" type="checkbox"> filter
+      <div id="filters">
+        bpm <input id="bpm" type="range" min="10" max="200" step="10">
+        <input id="break" type="checkbox" checked> breakbeat
+      </div>
+    </div>
+    <div id="genres">
+      <div id="downtempo" class="genre break straight slow"></div>
+
+      <div id="dubstep" class="genre break slow"></div>
+
+      <div id="two-step" class="genre break mid"></div>
+      <div id="breaks" class="genre break mid"></div>
+
+      <div id="drum &amp; bass" class="genre break fast"></div>
+
+      <div id="house" data-v="_cq-zWwInZo" class="genre straight mid"></div>
+      <div id="trance" class="genre straight mid"></div>
+      <div id="techno" class="genre straight mid"></div>
+      <div id="electro" class="genre straight mid"></div>
+      <div id="minimal" class="genre straight mid"></div>
+
+      <div id="hardstyle" class="genre straight fast"></div>
+
+    </div>
+    <div id="modal">
+      <h1>tunes 4 u</h1>
+      <div id="video-wrapper"></div>
+      <button id="close-modal">close</button>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="isotope.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
