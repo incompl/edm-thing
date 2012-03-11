@@ -41,8 +41,8 @@ button:hover {
 }
 
 #genres {
-  min-height: 400px;
-  padding: 20px;
+  min-height: 500px;
+  padding: 10px 20px 20px;
 }
 
 .genre {
