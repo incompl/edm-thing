@@ -1,5 +1,8 @@
 body {
   background-color: black;
+  background-image: url("bg.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
   color: white;
   padding: 0;
   margin: 0;
@@ -8,10 +11,28 @@ body {
 
 a {
   color: white;
+  font-style: normal;
+  padding: 2px;
+}
+
+button {
+  border: solid white 2px;
+  color: white;
+  border-radius: 5px;
+  background-color: black;
+  font-size: 1.3em;
+  padding: 0 5px 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: black;
+  border-color: black;
+  background-color: white;
 }
 
 #controls {
-  background-color: #333;
+  background-color: black;
   padding: .5em;
 }
 
@@ -19,16 +40,30 @@ a {
   display: none;
 }
 
+#genres {
+  min-height: 400px;
+  padding: 20px;
+}
+
 .genre {
-  width: 100px;
-  height: 65px;
-  margin: 20px;
+  width: 130px;
+  height: 85px;
+  margin: 10px;
   float: left;
   font-family: verdana;
   text-align: center;
   padding: 35px 0 0;
   border-radius: 15px 0 15px 0;
   font-style: italic;
+  border: solid white 2px;
+  line-height: 23px;
+  cursor: pointer;
+}
+
+.genre:hover {
+  border-color: white !important;
+  background-color: hsla(0, 0%, 40%, .7) !important;
+  color: white !important;
 }
 
 #modal {
@@ -37,13 +72,49 @@ a {
   width: 100%;
   height: 100%;
   top: 0;
-  background-color: hsla(0, 0%, 0%, .7);
+  background-color: hsla(0, 0%, 0%, .8);
   z-index: 3;
+  text-align: left;
+}
+
+#modal h1 {
+  text-align: center;
+}
+
+#modal-inside {
+  background-color: black;
+  width: 500px;
+  margin: 50px auto 0;
+  padding: 10px 20px 30px;
+  background-color: hsla(0, 0%, 0%, .5);
+  border-radius: 20px;
+}
+
+#video-wrapper {
   text-align: center;
 }
 
 #close-modal {
-  margin: 2em 0 0;
+  margin: 0 0 10px 10px;
+  float: right;
+}
+
+#about {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0 5px 5px 0;
+}
+
+#about a {
+  background-color: #111;
+  color: #333;
+  text-shadow: 1px 1px 0 black;
+  border-radius: 7px;
+}
+
+#about a:hover {
+  color: #3EFFC2;
 }
 
 /* isotope css */

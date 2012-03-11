@@ -1,25 +1,38 @@
 (function() {
 
-  $(".genre").each(function() {
-    $(this).html("<div class='name'>" + $(this).attr("id") + "</div>")
-    .append("<a href='#' class='play'>play<a>")
-    .css("background-color", "hsla(" + (Math.random() * 255) + ", 100%, 20%, 1)");
+  $.each(window.genres, function() {
+    $("#genres").append($("<div>", this));
   });
 
-  $(".play").on("click", function(e) {
+  $(".genre").each(function() {
+    var hue = Math.random() * 255;
+    $(this).html("<div class='name'>" + $(this).attr("id") + "</div>")
+    .append("<a href='#' class='play'>play<a>")
+    .css("background-color", "hsla(" + hue + ", 100%, 20%, .7)")
+    .css("border-color", "hsla(" + hue + ", 100%, 40%, 1)")
+    .css("color", "hsla(" + hue + ", 100%, 90%, 1)");
+  });
+
+  $(".genre").on("click", function(e) {
     e.preventDefault();
-    var v = $(this).closest(".genre").data("v");
+    var $genre = $(this).closest(".genre");
+    var v = $genre.data("v");
+    var name = $genre.attr("id");
+    $("#video-header").text(name);
+    $("#video-desc").text($genre.data("desc") || "");
+    $("#video-aka").text($genre.data("aka") ? "aka " + $genre.data("aka") : "");
     if (!v) {
-      $("#video-wrapper").text("No example for this yet. I'm lazy");
+      $("#video-wrapper").text("No example for " + name + " yet. I'm lazy");
     }
     else {
-      $("#video-wrapper").html('<iframe width="420" height="315" src="http://www.youtube.com/embed/' + v + '?rel=0" frameborder="0" allowfullscreen></iframe>');
+      $("#video-wrapper").html('<iframe id="youtubes" width="420" height="315" src="http://www.youtube.com/embed/' + v + '?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>');
     }
     $("#modal").show();
   });
 
   $("#close-modal").on("click", function(e) {
     e.preventDefault();
+    $("#youtubes").remove();
     $("#modal").hide();
   })
 
